@@ -28,3 +28,50 @@ You will get json response such as
 for second question, just created two more function which is obvious reused in many other php files and get_day is function while which can convert digit to respective day name where in database we have stored day as 1 - 7; where 1: monday, 2: tuesday, ... , 7:sunday
 
 get_time_for_coach.php is answer of second question which also uses time split function which provides us N number of slots for given time period for interval you specify
+
+
+
+
+For que 3, I'm checking multiple conditions while very first is for values : are values in a format or missing while three post parameters are require for that named : 1) coach : coach name should be specified, 2) time : in multiple of 30 minutes, 3) day : full day name, if anything misses then it gives error immidiately and there are many errors are there where comments are specified in the code
+
+Sample json input (input must be sent as post method and as form-data only) :
+            coach:Hawkeye Pierce // shuold be as same as saved in datasheet
+            day:thursday // capitialization doesn't matter
+            time:14:30 // should be in hh:mm format and mm should be 00 or 30 only
+
+sample outputs you get:
+
+1)  
+    {
+        "error": "Choose Other time"
+    }
+
+2) 
+    {
+        "success": "Slot booked"
+    }
+3)
+    {
+        "error": "No specific Slot available",
+        "Available slots": {
+            "0": "07:00:00",
+            "1": "07:30:00",
+            "2": "08:00:00",
+            "3": "08:30:00",
+            "4": "09:00:00",
+            "5": "09:30:00",
+            "6": "10:00:00",
+            "7": "10:30:00",
+            "8": "11:00:00",
+            "9": "11:30:00",
+            "10": "12:00:00",
+            "11": "12:30:00",
+            "13": "13:30:00",
+            "15": "15:30:00",
+            "16": "16:00:00",
+            "17": "16:30:00"
+        }
+    }
+
+
+Output will be in different conditions and could be different manner as well as per each condition

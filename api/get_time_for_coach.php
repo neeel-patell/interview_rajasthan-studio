@@ -11,9 +11,7 @@
     $coaches = get_coaches();
 
     foreach($coaches as $coach){
-        $timing = array();
-        // appdended with 2D array while keys will be week_day, available_at, available_until
-        $result = $GLOBALS['conn']->query("SELECT week_day, available_at, available_until FROM coach where `name`='$coach'");
+        $result = $conn->query("SELECT week_day, available_at, available_until FROM coach where `name`='$coach'");
         // getting week_day and as per that start and end time of particular coach
 
         $coach_timings = array();
