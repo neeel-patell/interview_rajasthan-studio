@@ -1,4 +1,4 @@
-Just import database.sql in your local machine and do other stuff
+Just import database_schema.sql in your local machine and do other stuff
 
 you will may see difference in day_of_week field which is changed with week_day and have values 1 -7 apart from Monday, ... , Sunday which respectively added 1, ... , 7 for each day where 1: monday and 7: sunday and for other days respectively while it just uses less memory and for more complex data we can get faster output whereas size is reduced(DDBMS concept)
 
