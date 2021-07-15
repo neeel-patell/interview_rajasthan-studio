@@ -16,4 +16,38 @@
         }
         return $name; // returing array of names
     }
+
+    function get_day($day){
+        switch($day){
+            case 1: 
+                return "Monday";
+            case 2: 
+                return "Tuesday";
+            case 3: 
+                return "Wednesday";
+            case 4: 
+                return "Thursday";
+            case 5: 
+                return "Friday";
+            case 6: 
+                return "Saturday";
+            case 7: 
+                return "Sunday";
+        }
+    }
+
+    function get_split_time($start, $end, $interval){
+        $start = new DateTime($start);
+        $end = new DateTime($end);
+        // getting objects to compare time
+        $slot_array = array();
+        // empty array to append slots
+        while($start < $end){
+            array_push($slot_array, $start->format("H:i:s"));
+            // appending time slot we got as per given interval 
+            $start->modify("+$interval minutes");
+            // incrementing time for next provided minutes
+        }
+        return $slot_array; // returning intervals found for given period s
+    }
 ?>
